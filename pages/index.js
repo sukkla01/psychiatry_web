@@ -5,7 +5,7 @@ import General from '../components/General'
 import Two from '../components/Two'
 import Tree from '../components/Tree'
 import { Steps, Button, message } from 'antd';
-import config from '../Config.js'
+import config from '../config.js'
 import axios from 'axios';
 import Router from 'next/router'
 

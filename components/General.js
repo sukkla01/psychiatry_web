@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Select, Button } from 'antd';
-import config from '../Config.js'
+import config from '../config.js'
 import axios from 'axios';
 
 const { Option } = Select;
