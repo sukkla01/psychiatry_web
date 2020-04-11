@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport Link from 'next/link';\nimport Head from '../components/head';\nimport Nav from '../components/nav';\nimport Login from '../components/structure/Login';\n\nconst Home = () => __jsx(\"div\", null, __jsx(Login, null));\n\nexport default Home;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,22 @@
+{
+  "name": "psychiatry",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p 80",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "antd": "^4.0.2",
+    "axios": "^0.19.2",
+    "moment": "^2.24.0",
+    "next": "^9.2.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "react-kawaii": "^0.16.0"
+  }
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"var config = {\n  font: 'Kanit',\n  test: '',\n  BASE_URL: 'http://110.49.126.23:4001',\n  // BASE_URL:'http://192.168.0.59:4044',\n  // BASE_URL:'http://localhost:4001',\n  height_monitor: 800,\n  width_heating: '95%',\n  width_observ: '95%',\n  aaa: ''\n};\nexport default config;","map":null,"metadata":{},"sourceType":"module"}
