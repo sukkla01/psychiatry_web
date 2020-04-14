@@ -33,7 +33,7 @@ export default class finish extends Component {
     }
     render() {
         const imgMap = [1, 2, 3, 4, 5, 6, 7]
-        const imgShow = this.props.url.query.id < 3 ? 1 : 7
+        const imgShow = this.props.url.query.id < 3 ? 1 : 8
         return (
             <Hoc>
                 <Content>
