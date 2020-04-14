@@ -4,15 +4,18 @@ export default class Tree extends Component {
     constructor() {
         super()
         this.state = {
-            select: 0
+            select: 0,
+            detail:''
         }
     }
     componentDidMount(){
         let no6 = JSON.parse(localStorage.getItem('6'))
+        let detail = JSON.parse(localStorage.getItem('detail'))
 
 
         this.setState({
             select :  no6 != null ? no6.chioce : 0,
+            detail :  detail != null ? detail.detail : '',
         })
 
     }
@@ -25,6 +28,12 @@ export default class Tree extends Component {
         localStorage.setItem('6', JSON.stringify({no:no,chioce}));
 
     }
+    onChange=(e)=>{
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+        localStorage.setItem('detail', JSON.stringify({detail : e.target.value }));
+    }
     render() {
         const { select } = this.state
         const colorBorder = select > 2 ? "card card-inverse-danger" : "card card-inverse-success"
@@ -36,9 +45,9 @@ export default class Tree extends Component {
                     <p><b>ในช่วง 1 สัปดาห์ที่ผ่านมา ท่านมีความเหนื่อยล้าทางอารมณ์ รู้สึกหมดพลัง หมดหวัง สูญเสียพลังงาน ทางจิตใจหรือไม่</b></p>
                 </div>
 
-                <p> คะแนน <div class="badge badge-success badge-pill">1</div> แทบไม่มี
-                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-success badge-pill">2</div> เป็นบางครั้ง</span></p>
-                <p>คะแนน <div class="badge badge-success badge-pill">3</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-success badge-pill">4</div> เป็นประจํา</span></p>
+                <p> คะแนน <div class="badge badge-danger badge-pill">1</div> แทบไม่มี
+                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-danger badge-pill">2</div> เป็นบางครั้ง</span></p>
+                <p>คะแนน <div class="badge badge-danger badge-pill">3</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-danger badge-pill">4</div> เป็นประจํา</span></p>
 
                 <div class="card card-inverse-info" id="context-menu-simple">
                     <div class="card-body">
@@ -54,6 +63,8 @@ export default class Tree extends Component {
                         </p>
                     </div>
                 </div>
+                <textarea onChange={this.onChange} value={this.state.detail} style={{ marginTop:10,fontFamily:'Kanit'}} className="form-control" rows={4} name="detail" placeholder="คุณอยากบอกอะไรกับหน่ายงานของคุณ ?" />
+
                 <div class={colorBorder} id="context-menu-simple" style={{ marginTop: 10 }}>
                     <div class="card-body" style={{ textAlign: 'center' }}>
 

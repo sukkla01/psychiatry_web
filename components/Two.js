@@ -1,6 +1,43 @@
 import React, { Component } from 'react'
-import { Input, Select, Button,Modal } from 'antd';
+import { Input, Select, Button, Modal } from 'antd';
 
+const Low = () => (
+    <>
+        <p>
+            <span style={{ marginRight:5}}><b>1.เครียดน้อย</b></span>
+            <span> เป็นความเครียดในชีวิตประจำวัน ซึ่งแต่ละคนสามารถปรับตัวได้เองไม่เกินปัญหาสุขภาพของตนเอง และท่านยังสามารถช่วยดูบุคลอื่นในครอบครัวและชุมชนได้ด้วย</span>
+        </p>
+    </>
+)
+const Middle = () => (
+    <>
+        <p>
+            <span style={{ marginRight:5}}><b>2.เครืยดปานกลาง</b></span>
+            <span> ในภาวะวิกฤตหรือภัยพิบัติบุคคลต้องเตรียมพร้อมในการจัดการกะบปัญหาต่างๆ จนทำให้เกิดความเครียดเพิ่มขึ้นในระดับปานกลาง ซึ่งยังถือว่าเป็นปกติเพราะทำให้เกิดความกระตือรือร้นในการเผชิญปัญหา</span>
+        </p>
+    </>
+)
+const Higher = () => (
+    <>
+        <p>
+            <span style={{ marginRight:5}}><b>4.เครียดมากที่สุด</b></span>
+            <span> เป็นความเครียดที่รุนแรงซึ่งส่งผลกระทบต่อภาวะร่างกาย ทำให้อ่อนแอเจ็บป่วยง่าย และต่อภาวะจิตใจจนอาจทำให้เกิดโรควิตกกังวล  ภาวะซึมเศร้า และเสี่ยงต่อการฆ่าตัวตายจะต้องได้รับการรักษาจากแพทย์ทันที และได้รับดูแลต่อเนื่องไปอีก 3-6 เดือน</span>
+        </p>
+    </>
+)
+const High = () => (
+    <>
+        <p>
+            <span style={{ marginRight:5}}><b>3.เครียดมาก</b></span>
+            <span>นภาวะวิกฤตหรือภัยพิบัติต่างๆ อาจทำให้เกิดการตอบสนองที่รุนแรงขึ้นชั่วคราวซึ่งมักจะลดมาเป็นปกติหลังเหตุการณ์ อย่างไรตามท่านควรมีการจัดการกับความเครียดดังต่อไปนี้</span>
+        </p>
+        <p style={{ marginLeft:5}}>- การฝึกการฝึกหายใจคลายเครียด</p>
+        <p style={{ marginLeft:5}}>- การพูดคุยกับคนใกล้ชิด การสวนมนต์ไหว้พระ การช่วยเหลือผู้อื่นที่ประสบปัญหาจะช่วยให้ความเครียดลดลง</p>
+        <p style={{ marginLeft:5}}>- การมีความหวังว่า เราจะฝ่าฟันอุปสรรคหรือปัญหาครั้งนี้ไปได้และมองเห็นด้านบวก เช่น อย่างน้อยก็มีชีวิตไว้ได้ มีคนเห็นใจและมีการช่วยเหลือจากฝ่ายต่างๆ</p>
+        <p style={{ marginLeft:5}}>- มองข้ามความขัดแย้งเก่าๆในอดีตแล้วรวมตัวกันช่วยให้ชุมชนผ่านวิกฤตไปได้</p>
+        <p style={{ marginLeft:5}}>- ภานใน 2 สัปดาห์ ท่านควรไปพบแพทย์เพื่อประเมินซ้ำว่าความเครียดลดลงหรือไม่เพราะความเครียดที่มากและต่อเนื่องอาจนำไปสู่โรควิตกกังวล ภาวะซึมเศร้า และเสี่ยงต่อการฆ่าตัวตายได้ ซึ่งจะต้องได้รับการรักษาจากแพทย์</p>
+    </>
+)
 
 export default class Two extends Component {
     constructor(props) {
@@ -20,7 +57,7 @@ export default class Two extends Component {
             data: [],
             data_new: [],
 
-            visible : false
+            visible: false
         }
     }
     componentDidMount() {
@@ -74,27 +111,29 @@ export default class Two extends Component {
 
     }
 
-    suggest =()=>{
+    suggest = () => {
         this.setState({
-            visible : true
+            visible: true
         })
     }
 
     handleCancel = () => {
         this.setState({
-          visible: false,
+            visible: false,
         });
-      };
+    };
     handleOk = () => {
         this.setState({
-          visible: false,
+            visible: false,
         });
-      };
+    };
     render() {
         const { select1, no1, select2, no2, select3, no3, select4, no4, select5, no5 } = this.state
         const total = select1 + select2 + select3 + select4 + select5
         const colorBorder = total < 5 ? "card card-inverse-success" : total < 8 ? "card card-inverse-warning" : "card card-inverse-danger"
-        const textTotal = total < 5 ? 'เครียดเล็กน้อย' : total < 8 ? 'เครียดปานกลาง' : total < 10 ? 'เครียดมาก' : 'เครียดที่สุด'
+        const textTotal = total < 5 ? 'เครียดเล็กน้อย' : total < 8 ? 'เครียดปานกลาง' : total < 10 ? 'เครียดมาก' : 'เครียดมากที่สุด'
+        const imgNo = total < 5 ? '5' : total < 8 ? '3' : total < 10 ? '6' : '4'
+        const textSuggest = total < 5 ? <Low /> : total < 8 ? <Middle /> : total < 10 ? <High /> : <Higher />
         return (
             <>
                 <hr />
@@ -102,9 +141,9 @@ export default class Two extends Component {
                     <p><b>ให้ประเมินอาการของท่านในรอบ 2 สัปดาห์ที่ผ่านมา (รวมทั้งวันนี้) โดยเลือกคะแนน 0 – 3 ที่ตรงกับ ความรู้สึกของท่าน</b></p>
                 </div>
 
-                <p> คะแนน <div class="badge badge-success badge-pill">0</div> แทบไม่มี
-                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-success badge-pill">1</div> เป็นบางคร้ัง</span></p>
-                <p>คะแนน <div class="badge badge-success badge-pill">2</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-success badge-pill">3</div> เป็นประจํา</span></p>
+                <p> คะแนน <div class="badge badge-danger badge-pill">0</div> แทบไม่มี
+                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-danger badge-pill">1</div> เป็นบางคร้ัง</span></p>
+                <p>คะแนน <div class="badge badge-danger badge-pill">2</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-danger badge-pill">3</div> เป็นประจํา</span></p>
 
 
 
@@ -193,9 +232,15 @@ export default class Two extends Component {
 
                         <p style={{ marginTop: 20, fontSize: 20 }}>คะแนนรวม {total} คะแนน</p>
                         <p style={{ marginTop: 20, fontSize: 20 }}>{textTotal}</p>
-                        <p  onClick = {this.suggest} style={{ marginTop: -10, fontSize: 14, color: 'red',cursor:'pointer' }}><i className="mdi mdi-information"></i> คลิกดูคำแนะนำ</p>
+                        {/* <p  onClick = {this.suggest} style={{ marginTop: -10, fontSize: 14, color: 'red',cursor:'pointer' }}><i className="mdi mdi-information"></i> คลิกดูคำแนะนำ</p> */}
                     </div>
                 </div>
+                <div class={colorBorder} id="context-menu-simple" style={{ marginTop: 10 }}>
+                    <div class="card-body" style={{ textAlign: 'left' }}>
+                        {textSuggest}
+                    </div>
+                </div>
+                <img src={"static/psy/"+imgNo +".jpg"} style={{ width: '100%', paddingTop: 10 }} />
 
 
                 <Modal
@@ -205,7 +250,7 @@ export default class Two extends Component {
                     //confirmLoading={confirmLoading}
                     onCancel={this.handleCancel}
                 >
-                    <img src="static/images/suggest.png"  style={{ width:'100%'}}/>
+                    <img src="static/images/suggest.png" style={{ width: '100%' }} />
                 </Modal>
             </>
         )

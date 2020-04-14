@@ -44,6 +44,7 @@ export default class index extends Component {
         let no4 = JSON.parse(localStorage.getItem('4'))
         let no5 = JSON.parse(localStorage.getItem('5'))
         let no6 = JSON.parse(localStorage.getItem('6'))
+        let detail = JSON.parse(localStorage.getItem('detail'))
 
         this.state.data = []
         this.state.data.push({
@@ -54,6 +55,7 @@ export default class index extends Component {
             no4: no4,
             no5: no5,
             no6: no6,
+            detail: detail,
         })
 
 
@@ -65,7 +67,7 @@ export default class index extends Component {
             const res = await axios.post(`${BASE_URL}/add-quest`, this.state.data)
             Router.push({
                 pathname: '/finish',
-                // query: { id: id }
+                query: { id: no6.chioce }
             })
             
 
