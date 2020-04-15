@@ -63,7 +63,7 @@ export default class Tree extends Component {
                         </p>
                     </div>
                 </div>
-                <p style={{ marginTop:20,color:'red' }}>คุณอยากบอกอะไรกับหน่ายงานของคุณ ?</p>
+                <p style={{ marginTop:20,color:'red' }}>คุณอยากจะบอกอะไรกับองค์กรของคุณ ?</p>
                 <textarea onChange={this.onChange} value={this.state.detail} style={{ marginTop:-10,fontFamily:'Kanit',borderColor:'#EE8497'}} className="form-control" rows={4} name="detail" placeholder="กรอกข้อมูล" />
 
                 <div class={colorBorder} id="context-menu-simple" style={{ marginTop:10 }}>
