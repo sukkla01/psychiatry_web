@@ -45,9 +45,9 @@ export default class Tree extends Component {
                     <p><b>ในช่วง 1 สัปดาห์ที่ผ่านมา ท่านมีความเหนื่อยล้าทางอารมณ์ รู้สึกหมดพลัง หมดหวัง สูญเสียพลังงาน ทางจิตใจหรือไม่</b></p>
                 </div>
 
-                <p> คะแนน <div class="badge badge-danger badge-pill">1</div> แทบไม่มี
-                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-danger badge-pill">2</div> เป็นบางครั้ง</span></p>
-                <p>คะแนน <div class="badge badge-danger badge-pill">3</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-danger badge-pill">4</div> เป็นประจํา</span></p>
+                <p> คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >1</button> แทบไม่มี
+                <span style={{ marginLeft: 10 }}>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >2</button> เป็นบางครั้ง</span></p>
+                <p>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >3</button> บ่อยครั้ง <span style={{ marginLeft: 2 }}>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >4</button> เป็นประจํา</span></p>
 
                 <div class="card card-inverse-info" id="context-menu-simple">
                     <div class="card-body">

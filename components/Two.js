@@ -141,9 +141,9 @@ export default class Two extends Component {
                     <p><b>ให้ประเมินอาการของท่านในรอบ 2 สัปดาห์ที่ผ่านมา (รวมทั้งวันนี้) โดยเลือกคะแนน 0 – 3 ที่ตรงกับ ความรู้สึกของท่าน</b></p>
                 </div>
 
-                <p> คะแนน <div class="badge badge-danger badge-pill">0</div> แทบไม่มี
-                <span style={{ marginLeft: 18 }}>คะแนน <div class="badge badge-danger badge-pill">1</div> เป็นบางคร้ัง</span></p>
-                <p>คะแนน <div class="badge badge-danger badge-pill">2</div> บ่อยครั้ง <span style={{ marginLeft: 10 }}>คะแนน <div class="badge badge-danger badge-pill">3</div> เป็นประจํา</span></p>
+                <p> คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >0</button> แทบไม่มี
+                <span style={{ marginLeft: 13 }}>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >1</button> เป็นบางคร้ัง</span></p>
+                <p>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >2</button> บ่อยครั้ง <span style={{ marginLeft: 5 }}>คะแนน <button  style={{ marginLeft: 0 }} type="button" className="btn btn-danger  btn-xs" >3</button> เป็นประจํา</span></p>
 
 
 
